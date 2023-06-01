@@ -54,6 +54,18 @@ function showHiddenGamesModal()
     $("#hidden-game-modal").modal("show");
 }
 
+function handleImageError(img, name) {
+    var placeholder = document.createElement('div');
+    placeholder.classList.add('placeholder');
+
+    var text = document.createElement('span');
+    text.classList.add('placeholder-text');
+    text.textContent = 'Image not found for ' + name;
+
+    placeholder.appendChild(text);
+    img.parentNode.replaceChild(placeholder, img);
+}
+
 function errorOnAjax() {
     console.log("ERROR on ajax request");
 }

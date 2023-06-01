@@ -6,6 +6,7 @@
 <head>
     <link rel="stylesheet" href="~/css/Library.css">
 </head>
+
 <br><br>
 @if (Model == null)
 {
@@ -81,7 +82,7 @@ else
                 {
                     <div class="flex-item gameContainer" id="@tempGame.Name" value="@game.Game.AppId" data-toggle="tooltip" title="@game.Game.Name" name=@game.Game.Id style="padding: 2px; position: relative">
                         <button class="achievement-btn" data-toggle="tooltip" title="View Achievements" id="@game.Game.AppId"></button>
-                        <img src="@string.Format("https://steamcdn-a.akamaihd.net/steam/apps/{0}/header.jpg", @game.Game.AppId)" style="height:200px"/><br>
+                        <img src="@string.Format("https://steamcdn-a.akamaihd.net/steam/apps/{0}/header.jpg", @game.Game.AppId)" style="height:200px" onerror="handleImageError(this, '@tempGame.Name')"/><br>
                         @{
                             //This is used to remove punctuation so that strings still work. Games like 'America's Army', breaks interacitons thanks to it's apostrophe.
                             var index = tempGame.Name.IndexOf("'");

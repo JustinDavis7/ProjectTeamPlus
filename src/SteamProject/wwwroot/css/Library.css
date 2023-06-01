@@ -202,3 +202,18 @@ label {
     margin-bottom: 15px;
 }
 
+/* Define the dimensions and styling for the placeholder box */
+.placeholder {
+    width: 428px;
+    height: 204px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-text {
+color: black;
+font-size: 18px;
+text-align: center;
+}
